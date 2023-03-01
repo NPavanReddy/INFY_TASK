@@ -1,0 +1,147 @@
+<form
+  [formGroup]="callDataForm"
+  (ngSubmit)="onSubmit()"
+  class="border p-3 rounded shadow-sm"
+>
+  <h3 class="text-center">Add Call Details</h3>
+  <div class="row mt-5">
+    <div class="col-6">
+      <input
+        class="form-control w-100"
+        type="text"
+        placeholder="Activity *"
+        name="activity"
+        formControlName="activity"
+      />
+      <div
+        *ngIf="
+          callDataForm.get('activity')?.invalid &&
+          (callDataForm.get('activity')?.dirty ||
+            callDataForm.get('activity')?.touched)
+        "
+      >
+        <div
+          class="text-danger text-sm"
+          *ngIf="callDataForm.get('activity')?.errors?.required"
+        >
+          Activity is required
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <input
+        class="form-control w-100"
+        type="text"
+        placeholder="Call Name *"
+        name="callName"
+        formControlName="callName"
+      />
+      <div
+        *ngIf="
+          callDataForm.get('callName')?.invalid &&
+          (callDataForm.get('callName')?.dirty ||
+            callDataForm.get('callName')?.touched)
+        "
+      >
+        <div
+          class="text-danger text-sm"
+          *ngIf="callDataForm.get('callName')?.errors?.required"
+        >
+          Call Name is required
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-3">
+      <textarea
+        class="form-control"
+        placeholder="Description"
+        name="description"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="col-6 mt-3">
+      <div class="d-flex align-items-center form-control">
+        <input
+          type="checkbox"
+          name="system"
+          id="system"
+          formControlName="system"
+        />
+        <label class="mlUtility" for="system">System</label>
+      </div>
+    </div>
+    <div class="col-6 mt-3 d-flex align-items-center">
+      <div class="d-flex align-items-center form-control">
+        <input
+          type="checkbox"
+          name="status"
+          id="status"
+          formControlName="status"
+        />
+        <label class="mlUtility" for="status">Status</label>
+      </div>
+    </div>
+    <div class="col-6 mt-3">
+      <label for="startDate">Start Date <small>*</small></label>
+      <input
+        type="date"
+        class="form-control"
+        name="startDate"
+        id="startDate"
+        formControlName="startDate"
+      />
+      <div
+        *ngIf="
+          callDataForm.get('startDate')?.invalid &&
+          (callDataForm.get('startDate')?.dirty ||
+            callDataForm.get('startDate')?.touched)
+        "
+      >
+        <div
+          class="text-danger text-sm"
+          *ngIf="callDataForm.get('startDate')?.errors?.required"
+        >
+          Start date is required
+        </div>
+      </div>
+    </div>
+    <div class="col-6 mt-3">
+      <label for="endDate">End Date <small>*</small></label>
+      <input
+        type="date"
+        class="form-control"
+        name="endDate"
+        id="endDate"
+        formControlName="endDate"
+      />
+      <div
+        *ngIf="
+          callDataForm.get('endDate')?.invalid &&
+          (callDataForm.get('endDate')?.dirty ||
+            callDataForm.get('endDate')?.touched)
+        "
+      >
+        <div
+          class="text-danger text-sm"
+          *ngIf="callDataForm.get('endDate')?.errors?.required"
+        >
+          End Date is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-6">
+      <button class="btn btn-danger w-100" type="reset">Reset</button>
+    </div>
+    <div class="col-6">
+      <button
+        [disabled]="callDataForm.invalid"
+        class="btn btn-success w-100"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</form>

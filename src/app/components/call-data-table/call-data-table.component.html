@@ -1,0 +1,237 @@
+<div>
+  <header class="my-3 d-flex justify-content-between align-items-centre">
+    <h3>Call Data</h3>
+    <button class="btn btn-primary" (click)="addNewData()">Add Data</button>
+  </header>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">
+          Activity
+          <span (click)="onSort('activity', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('activity', 'desc')" class="sortButton">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th scope="col">
+          Call Name
+          <span (click)="onSort('callName', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('callName', 'desc')" class="sortButton">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th scope="col">
+          Description
+          <span (click)="onSort('description', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('description', 'desc')" class="sortButton">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th scope="col">
+          System
+          <span (click)="onSort('system', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('system', 'desc')" class="sortButton">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th scope="col">
+          Active
+          <span (click)="onSort('status', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('status', 'desc')" class="sortButton">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th scope="col">
+          Start
+          <span (click)="onSort('startDate', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('startDate', 'desc')" class="sortButton">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th scope="col">
+          End
+          <span (click)="onSort('endDate', 'asc')" class="sortButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              style="width: 10px"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+          <span (click)="onSort('endDate', 'desc')">
+            <svg
+              style="width: 10px; margin-left: 5px"
+              class="rotate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+              />
+            </svg>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of callData">
+        <td>{{ data?.activity | titlecase }}</td>
+        <td>
+          {{ data?.callName }}
+        </td>
+        <td>
+          {{ data?.description }}
+        </td>
+        <td>
+          <div *ngIf="!data?.system">&#10060;</div>
+          <div *ngIf="data?.system">&#10003;</div>
+        </td>
+        <td>
+          <div>
+            <input type="checkbox" [checked]="data.status" />
+          </div>
+        </td>
+        <td>{{ data?.startDate | date : "MM/dd/YYYY" }}</td>
+        <td>{{ data?.endDate | date : "MM/dd/YYYY" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- PAGINATION -->
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [collectionSize]="collectionSize"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="refreshCallData()"
+    >
+    </ngb-pagination>
+
+    <select
+      class="form-select height_fix"
+      style="width: auto"
+      [(ngModel)]="pageSize"
+      (ngModelChange)="refreshCallData()"
+    >
+      <option [ngValue]="5">5 items per page</option>
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="15">15 items per page</option>
+    </select>
+  </div>
+</div>
